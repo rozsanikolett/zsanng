@@ -17,3 +17,13 @@ Az ügyfél azt szeretné, hogy a project a lehető leghamarabb elkészüljön.
 
 - A házhozszállítás bevezetésével tovább romlott a munkavégzés hatékonysága. A fronton dolgozók megpróbálták egy excel táblában vezetni az asztalok foglalásait, a rendeléseket valamint a teljes ellátás összegét. Ez nem vezetette az éttermet a megoldáshoz.
 
+### 3. Vágyálom
+A project célja egy olyan rendszer létrehozása, amely összehangolja és optimalizálja az étterem működését. Megkönnyíti a munkavégzés közbeni adminisztrációt. 
+
+- Szeretnének egy bejelentkező felület.
+- A bejelentkezést követően legyen lehetőség az asztal kiválasztásához, tételek kiírásához.
+- Fontos, hogy egyszerűen javíthassák a félreütött rendeléseket.
+- A vendégek távozása után tudjanak törölni asztalokat.
+- A konyhán ugyanazok az információk legyenek elérhetőek, mint a fronton.
+- A tételeket lehessen szerkeszteni, törölni bővíteni.
+- A rendszer mutassa a tételek elkészítésének állapotát.
