@@ -19,3 +19,15 @@ Az ügyfél azt reméli, hogy a program gyorsít a kiszolgálás menetén. Ha k�
   - Tételek létrehozása, módosítása.
   - Asztalonként átlátható rendelések.
    
+### 4. Követelménylista 
+
+ID|Verzió|Név|Kifejtés
+--|------|---|--------
+ID|Verzió|Név|Kifejtés
+--|------|---|--------
+K01|V1.0|Tételek adminisztrációja|Tételek regisztrálása, törlése, módosítása a programban.
+K02|V1.0|Felszolgálás adminisztrációja|Vendégek igényelt tételeinek adminisztrációja.
+K03|V1.0|Felhasználói fiókok kezelése|Bejelentkezés, kijelentkezés.
+K04|V1.0|Egyszerűen használható kezelőfelület|Felhasználói felület megvalósítása, amely mindenki számára a lehető legegyszerűbb átállást és átlátást eredményezi.
+K05|V1.0|Költséghatékony üzemeltetés|A szabványos technológiák használata biztosítja.
+K06|V1.0|Asztalok kiválasztása|Tétel kiírása a megadott asztalra.
