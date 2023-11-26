@@ -57,8 +57,24 @@ A-->F;
 A bejelentkezett felhasználó jogosult bármilyen művelet elvégzésére.
 A kijelentkezett felhasználó csak belépést fog tudni elvégezni.
 
-7. Képernyő terv
+### 6. Képernyő terv
 
 A képernyőtervek az alábbi linken elérhetőek:
+
 https://ibb.co/WpgNhnV
+
 https://ibb.co/0GZbJ24
+
+### 7. Forgatókönyvek
+
+A program megnyitása során a bejelentező felülettel találkozik először a felhasználó. 
+
+Bejelentkezést követően baloldalt megjelenik az asztal választó.
+
+Bal felső sorban elérhető lesz egy foglalások gomb és egy kijelentkezés gomb.
+
+Az asztal kiválasztását követően ki lehet választani a tétel típusát, kategóriáját, mértékegységét, ezt egy gombal hozzá is lehet adni az asztalhoz. Jobb alsó sarokban elérhető lesz egy 'fizetve" gomb.
+
+Hibás rögzítés esetén egy 'törlés' gomb előrhető lesz a 'hozzáad' gomb mellett.
+
+Letisztultan minden meg fog jelenni és egyszerűen elérhetőek lesznek a gombok a műveletek elvégzéséhez.
