@@ -8,7 +8,7 @@ Jelenleg sok emberi hiba történik a munkájuk során, több manuális lépés 
 Nem szeretnének bonyolult eszközöket használni, mert csapatuk számára azt nehéz lenne megérteni és megértetni. Emellett szeretnének együttműködni egy megosztott környezetben/keretrendszerben. 
 Az ügyfél azt szeretné, hogy a project a lehető leghamarabb elkészüljön. 
 
-### 2.Jelenlegi helyzet
+### 2. Jelenlegi helyzet
 - A Zsanng Kft 3 étterem többségi tulajdonosa. Fontos számukra a folyamatos fejlődés. Az elmúlt 2 évben bevezették az eldobható evőeszközöket, valamint szívószálaik is száraz tészta alapúak. Az elmúlt fél évben elérhető lett a házhozszállítás is.
 
 - A rendelések rögzítése papíron történik. A papírt a pincér rögzíti a konyhában, majd a szakácsok elosztják egymás között a feladatokat. 
@@ -31,7 +31,7 @@ A project célja egy olyan rendszer létrehozása, amely összehangolja és opti
 ### 4. Jelenlegi üzleti folyamatok modellje:
 ```mermaid
 flowchart TD;
-A("Egy munkatársunk a rendeléseket felveszi papíron.");
+A("Egy munkatársuk a rendeléseket felveszi papíron.");
 B("A rendelést rögzíti egy excel táblába a fronton lévő számítógépbe.");
 C("A rendelés papírját átadja a konyhának.");
 D("A konyha a beérkező rendelési papírokat összesíti és elkészíti.");
@@ -43,4 +43,18 @@ C-->D;
 D-->E;
 E-->F;
 F-->A;
+```
+### 5. Igényelt üzleti folyamatok modellje:
+```mermaid
+flowchart TD;
+A("Egy munkatársuk a rendeléseket rögzíti a fronton lévő számítógépbe\n (az elkészített programban).");
+B("A rendelés megjelenik a konyhában egy monitoron.");
+C("A konyha elkészíti a rendelést.");
+D("Az elkészült tételeket átadja a konyha a felszolgálónak.");
+E("Távozás után a felszolgáló kiválasztja a 'Fizetve' gombot.\n Az asztal a programban üressé válik.");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->A;
 ```
