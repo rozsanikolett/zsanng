@@ -1,4 +1,4 @@
-# Terraform követelmény specifikáció
+# Étterem project követelmény specifikáció
 
 ### 1. Áttekintés
 - Az ügyfél külsős informatikai szakértőket szeretne felvenni, akik megoldást tudnak nyújtani arra, hogy a cég feladatait sikeresen migrálják egy kiforrottabb automatizált megoldásba. 
@@ -58,3 +58,9 @@ C-->D;
 D-->E;
 E-->A;
 ```
+
+### 6. A rendszerre vonatkozó szabályok
+- A Polgári Törvénykönyvről szóló 2013. évi V. törvény (Ptk.);
+- A fogyasztóvédelemről szóló 1997. évi CLV. törvény (Fgytv.);
+- A fogyasztó és a vállalkozás közötti szerződések részletes szabályairól szóló 45/2014. (II. 26.) Korm. rendelet;
+- A termékek eladási ára és egységára, továbbá a szolgáltatások díja feltüntetésének részletes szabályairól szóló 4/2009. (I. 30.) NFGM–SZMM együttes rendelet.
