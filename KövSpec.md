@@ -64,3 +64,14 @@ E-->A;
 - A fogyasztóvédelemről szóló 1997. évi CLV. törvény (Fgytv.);
 - A fogyasztó és a vállalkozás közötti szerződések részletes szabályairól szóló 45/2014. (II. 26.) Korm. rendelet;
 - A termékek eladási ára és egységára, továbbá a szolgáltatások díja feltüntetésének részletes szabályairól szóló 4/2009. (I. 30.) NFGM–SZMM együttes rendelet.
+
+### 7. Követelménylista
+
+ID|Verzió|Név|Kifejtés
+--|------|---|--------
+K01|V1.0|Tételek adminisztrációja|Tételek regisztrálása, törlése, módosítása a programban.
+K02|V1.0|Felszolgálás adminisztrációja|Vendégek igényelt tételeinek adminisztrációja.
+K03|V1.0|Felhasználói fiókok kezelése|Bejelentkezés, kijelentkezés
+K04|V1.0|Egyszerűen használható kezelőfelület|Felhasználói felület megvalósítása, amely mindenki számára a lehető legegyszerűbb átállást és átlátást eredményezi.
+K05|V1.0|Költséghatékony üzemeltetés|A szabványos technológiák használata biztosítja.
+K06|V1.0|Bővíthetőség|Új funkciók utólagos hozzáadásának biztosítása.
