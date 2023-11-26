@@ -2,15 +2,18 @@
 
 ### 1. Áttekintés
 - Az ügyfél külsős informatikai szakértőket szeretne felvenni, akik megoldást tudnak nyújtani arra, hogy a cég feladatait sikeresen migrálják egy kiforrottabb automatizált megoldásba. 
-Jelenleg sok emberi hiba történik a munkájuk során, több manuális lépés megtalálható meglévő folyamataikban. 
+Jelenleg sok emberi hiba történik a munkájuk során, több manuális lépés megtalálható meglévő folyamataikban.
+
 - Olyan keretrendszert szeretnének, amely segít nekik minden eljárást automatizálni. 
 Nem szeretnének bonyolult eszközöket használni, mert csapatuk számára azt nehéz lenne megérteni és megértetni. Emellett szeretnének együttműködni egy megosztott környezetben/keretrendszerben. 
 Az ügyfél azt szeretné, hogy a project a lehető leghamarabb elkészüljön. 
 
-Kiemelték továbbá a következő pontokat:
+### 2.Jelenlegi helyzet
+- A Zsanng Kft 3 étterem többségi tulajdonosa. Fontos számukra a folyamatos fejlődés. Az elmúlt 2 évben bevezették az eldobható evőeszközöket, valamint szívószálaik is száraz tészta alapúak. Az elmúlt fél évben elérhető lett a házhozszállítás is.
 
-- **Dokumentáció**: Minden megoldást a lehető legrészletesebben dokumentálni kell.
-- **Egyszerűség**: Szeretnék, hogy a keretrendszer könnyedén elsajátítható legyen.
-- **Rendszeresített eljárás**: Jóváhagyási munkafolyamat kialakítása.
-- **Tesztelés**: Lehetőség a kódjuk tesztelésére.
-- Szeretnének néhány példa terraform kódot. Technikai szempontból olyan **integrált rendszert** szeretnének, amely kezeli a **kódot**, a **problémakövetést** és az **automatizált folyamatokat**.
+- A rendelések rögzítése papíron történik. A papírt a pincér rögzíti a konyhában, majd a szakácsok elosztják egymás között a feladatokat. 
+  
+- A teltházas kiszolgálások megterhelőek lehetnek mind a konyhában és a fronton is. Ezáltal előfordulnak félreértések, hibás kiszolgálások.(Például: Nem azt rendelte a vendég, mint amit a konyhán elkészítettek.)
+
+- A házhozszállítás bevezetésével tovább romlott a munkavégzés hatékonysága. A fronton dolgozók megpróbálták egy excel táblában vezetni az asztalok foglalásait, a rendeléseket valamint a teljes ellátás összegét. Ez nem vezetette az éttermet a megoldáshoz.
+
