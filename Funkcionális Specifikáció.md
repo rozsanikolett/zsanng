@@ -57,5 +57,8 @@ A-->F;
 A bejelentkezett felhasználó jogosult bármilyen művelet elvégzésére.
 A kijelentkezett felhasználó csak belépést fog tudni elvégezni.
 
+7. Képernyő terv
 
-
+A képernyőtervek az alábbi linken elérhetőek:
+https://ibb.co/WpgNhnV
+https://ibb.co/0GZbJ24
