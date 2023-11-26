@@ -27,3 +27,20 @@ A project célja egy olyan rendszer létrehozása, amely összehangolja és opti
 - A konyhán ugyanazok az információk legyenek elérhetőek, mint a fronton.
 - A tételeket lehessen szerkeszteni, törölni bővíteni.
 - A rendszer mutassa a tételek elkészítésének állapotát.
+
+### 4. Jelenlegi üzleti folyamatok modellje:
+```mermaid
+flowchart TD;
+A("Egy munkatársunk a rendeléseket felveszi papíron.");
+B("A rendelést rögzíti egy excel táblába a fronton lévő számítógépbe.");
+C("A rendelés papírját átadja a konyhának.");
+D("A konyha a beérkező rendelési papírokat összesíti és elkészíti.");
+E("A kész rendelést átadja a felszolgálónak.");
+F("A papírt kidobják.\nRendelés teljesítve.");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+F-->A;
+```
