@@ -47,6 +47,17 @@ Login felület|Bejelentkezés / kijelentkezés funkció|2 óra|Magucsa-Rózsa Ni
 Asztal foglalás|Asztalok foglalása funkció|3 óra| Hanzel Norbert
 Tételek kiírás|Tételek hozzárendelése asztalhoz funkció|4 óra| Bakos Zsolt, Magucsa-Rózsa Nikolett
 
+
+Kommunikáció: 
+```mermaid
+flowchart TD;
+A("MySql server");
+B("Kliens front");
+C("Kliens konyha");
+A-->B;
+A-->C;
+```
+
 ## Adatbázis terv
 Karakterkódolás UTF-8.
 
