@@ -5,6 +5,38 @@
 - A program .NET keretrendszerben íródik.
 - Az adattárolás MySQL adatbáziban történik.
 
+  
+## Projectterv
+ - szerepkörök, felelőségek:
+   
+     Product owner:
+
+               Vas Ádám
+
+     Frontend:
+   
+               Hanzel Norbert
+               Máté Gábor
+               Magucsa-Rózsa Nikolett
+               Bakos Zsolt
+               Vas Ádám
+   
+     Backend:
+
+               Hanzel Norbert
+               Máté Gábor
+               Magucsa-Rózsa Nikolett
+               Bakos Zsolt
+               Vas Ádám
+   		
+   Tesztelés:
+
+               Hanzel Norbert
+               Máté Gábor
+               Magucsa-Rózsa Nikolett
+               Bakos Zsolt
+               Vas Ádám
+
 ## Adatbázis terv
 Karakterkódolás UTF-8.
 
