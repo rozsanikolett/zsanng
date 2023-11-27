@@ -6,7 +6,7 @@
 - Az adattárolás MySQL adatbáziban történik.
 
   
-## Projectterv
+## Project terv
  - szerepkörök, felelőségek:
    
      Product owner:
@@ -36,6 +36,16 @@
                Magucsa-Rózsa Nikolett
                Bakos Zsolt
                Vas Ádám
+
+Funkció|Feladat|Becsült idő|Felelős
+--|------|---|--------
+Követelmény specifikáció|Követelmény specifikáció kidolgozása|3 óra|Vas Ádám
+Funkcionális specifikáció|Funkcionális specifikáció kidolgozása|3 óra|Vas Ádám
+Rendszerterv|Rendszerterv kidolgozása|4 óra|Máté Gábor
+Adattárolás|Adatbázis létrehozása|3 óra|Hanzel Norbert,Máté Gábor,Magucsa-Rózsa Nikolett
+Login felület|Bejelentkezés / kijelentkezés funkció|2 óra|Magucsa-Rózsa Nikolett
+Asztal foglalás|Asztalok foglalása funkció|3 óra| Hanzel Norbert
+Tételek kiírás|Tételek hozzárendelése asztalhoz funkció|4 óra| Bakos Zsolt, Magucsa-Rózsa Nikolett
 
 ## Adatbázis terv
 Karakterkódolás UTF-8.
