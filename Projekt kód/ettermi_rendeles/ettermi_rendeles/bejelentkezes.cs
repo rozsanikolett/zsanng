@@ -19,6 +19,8 @@ namespace ettermi_rendeles
 
         Label lb_bej, lb_felhnev, lb_jelszo;
         TextBox tb_fh, tb_jelszo;
+        Button btn_bej;
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -79,6 +81,16 @@ namespace ettermi_rendeles
                 Font = new Font("Times", 12f),
                 PasswordChar = '*',
                 Size = new Size(158, 20),
+            };
+
+
+            btn_bej = new Button()
+            {
+                Parent = this,
+                Location = new Point(22, 145),
+                Font = new Font("Niagara Solid", 18.5f),
+                Size = new Size(193, 40),
+                Text = "Bejelentkezés",
             };
 
         }
