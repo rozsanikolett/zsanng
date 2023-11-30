@@ -25,7 +25,7 @@ namespace ettermi_rendeles
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            ClientSize = new Size(238, 210);
+            ClientSize = new Size(320, 210);
             CenterToScreen();
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
@@ -37,7 +37,7 @@ namespace ettermi_rendeles
                 Location = new Point(75, 9),
                 Font = new Font("Niagara Solid", 16f),
                 Text = "Bejelentkezés",
-                Size = new Size(124, 30),
+                Size = new Size(200, 30),
                 BackColor = Color.Transparent,
                 ForeColor = Color.White,
             };
@@ -48,7 +48,7 @@ namespace ettermi_rendeles
                 Location = new Point(5, 62),
                 Font = new Font("Niagara Solid", 16f),
                 Text = "Felhasználónév",
-                Size = new Size(100, 30),
+                Size = new Size(180, 30),
                 BackColor = Color.Transparent,
                 ForeColor = Color.White,
             };
@@ -59,7 +59,7 @@ namespace ettermi_rendeles
                 Location = new Point(5, 100),
                 Font = new Font("Niagara Solid", 16f),
                 Text = "Jelszó",
-                Size = new Size(50, 30),
+                Size = new Size(120, 30),
                 BackColor = Color.Transparent,
                 ForeColor = Color.White,
             };
@@ -69,7 +69,7 @@ namespace ettermi_rendeles
             tb_fh = new TextBox()
             {
                 Parent = this,
-                Location = new Point(115, 60),
+                Location = new Point(190, 62),
                 Font = new Font("Times", 12f),
                 Size = new Size(100, 20),
             };
@@ -77,17 +77,17 @@ namespace ettermi_rendeles
             tb_jelszo = new TextBox()
             {
                 Parent = this,
-                Location = new Point(57, 98),
+                Location = new Point(190, 100),
                 Font = new Font("Times", 12f),
                 PasswordChar = '*',
-                Size = new Size(158, 20),
+                Size = new Size(100, 20),
             };
 
 
             btn_bej = new Button()
             {
                 Parent = this,
-                Location = new Point(22, 145),
+                Location = new Point(100, 145),
                 Font = new Font("Niagara Solid", 18.5f),
                 Size = new Size(193, 40),
                 Text = "Bejelentkezés",
