@@ -11,7 +11,7 @@ namespace ettermi_rendeles
     class adatbazis
     {
 		//az alábbi kapcsolatot definiáló string
-		string kapcs_string = "datasource=http://185.51.188.57/phpMyAdm;database=etterem_rn;username=nohawebc_zsanng;password=ZsAnNg2023!;charset=utf8";
+		string kapcs_string = "datasource=http://185.51.188.57/phpMyAdm;database=nohawebc_zsanng_db;username=nohawebc_zsanng;password=ZsAnNg2023!;charset=utf8";
 		// DB kapcsolat változója:
 		public MySqlConnection kapcs_mysql;
         //adapter, a dataset feltöltéséhez, ezzel fogjuk a datagridview forrását átadni
