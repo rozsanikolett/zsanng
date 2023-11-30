@@ -93,7 +93,31 @@ namespace ettermi_rendeles
                 Text = "Bejelentkezés",
             };
 
+            btn_bej.Click += Btn_bej_Click;
+            btn_bej.Paint += Btn_bej_Paint;
+            this.FormClosing += Bejelentkezes_FormClosing;
         }
+
+        private void Btn_bej_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, btn_bej.ClientRectangle,
+            SystemColors.ControlLightLight, 2, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 2, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 4, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 4, ButtonBorderStyle.Outset);
+        }
+
+        private void Bejelentkezes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Btn_bej_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
 
