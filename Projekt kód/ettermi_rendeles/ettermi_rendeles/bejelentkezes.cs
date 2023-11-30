@@ -17,8 +17,8 @@ namespace ettermi_rendeles
             InitializeComponent();
         }
 
-        Label lb_bej, lb_felhnev;
-        TextBox tb_fh;
+        Label lb_bej, lb_felhnev, lb_jelszo;
+        TextBox tb_fh, tb_jelszo;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -51,6 +51,17 @@ namespace ettermi_rendeles
                 ForeColor = Color.White,
             };
 
+            lb_jelszo = new Label()
+            {
+                Parent = this,
+                Location = new Point(5, 100),
+                Font = new Font("Niagara Solid", 16f),
+                Text = "Jelszó",
+                Size = new Size(50, 30),
+                BackColor = Color.Transparent,
+                ForeColor = Color.White,
+            };
+
 
 
             tb_fh = new TextBox()
@@ -61,6 +72,14 @@ namespace ettermi_rendeles
                 Size = new Size(100, 20),
             };
 
+            tb_jelszo = new TextBox()
+            {
+                Parent = this,
+                Location = new Point(57, 98),
+                Font = new Font("Times", 12f),
+                PasswordChar = '*',
+                Size = new Size(158, 20),
+            };
 
         }
     }
