@@ -1,0 +1,10 @@
+C:\Users\sasko\Desktop\AFP gyak\Depo\zsanng\Projekt kód\ettermi_rendeles\ettermi_rendeles\bin\Debug\ettermi_rendeles.exe.config
+C:\Users\sasko\Desktop\AFP gyak\Depo\zsanng\Projekt kód\ettermi_rendeles\ettermi_rendeles\bin\Debug\ettermi_rendeles.exe
+C:\Users\sasko\Desktop\AFP gyak\Depo\zsanng\Projekt kód\ettermi_rendeles\ettermi_rendeles\bin\Debug\ettermi_rendeles.pdb
+C:\Users\sasko\Desktop\AFP gyak\Depo\zsanng\Projekt kód\ettermi_rendeles\ettermi_rendeles\obj\Debug\ettermi_rendeles.csproj.AssemblyReference.cache
+C:\Users\sasko\Desktop\AFP gyak\Depo\zsanng\Projekt kód\ettermi_rendeles\ettermi_rendeles\obj\Debug\ettermi_rendeles.bejelentkezes.resources
+C:\Users\sasko\Desktop\AFP gyak\Depo\zsanng\Projekt kód\ettermi_rendeles\ettermi_rendeles\obj\Debug\ettermi_rendeles.Properties.Resources.resources
+C:\Users\sasko\Desktop\AFP gyak\Depo\zsanng\Projekt kód\ettermi_rendeles\ettermi_rendeles\obj\Debug\ettermi_rendeles.csproj.GenerateResource.cache
+C:\Users\sasko\Desktop\AFP gyak\Depo\zsanng\Projekt kód\ettermi_rendeles\ettermi_rendeles\obj\Debug\ettermi_rendeles.csproj.CoreCompileInputs.cache
+C:\Users\sasko\Desktop\AFP gyak\Depo\zsanng\Projekt kód\ettermi_rendeles\ettermi_rendeles\obj\Debug\ettermi_rendeles.exe
+C:\Users\sasko\Desktop\AFP gyak\Depo\zsanng\Projekt kód\ettermi_rendeles\ettermi_rendeles\obj\Debug\ettermi_rendeles.pdb
