@@ -481,5 +481,567 @@ namespace ettermi_rendeles
         }
         #endregion
 
+        #region asztalok datagrid
+        //-------------------------1-es asztal datagrid------------------------------------------------------------------------------------------------------------------------
+
+        private void Tb_menny_a1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+                e.Handled = true;
+
+        }
+
+        private void hozzaad_a1_Click(object sender, EventArgs e)
+        {
+            bool ures = (szamla_a1.DataSource == null); //ezt használom majd a rendelés közben befutó újabb rendelés vizsgálatánál
+
+            bool foglalt;
+            try { foglalt = Convert.ToDateTime(DateTime.Now.ToShortDateString()) == Convert.ToDateTime(con.rekord("SELECT datum FROM foglalas WHERE asztal_id = 1")[0]); }
+            catch { foglalt = false; MessageBox.Show("Vegyen fel foglalást!"); }
+
+
+            if (cb_kat_a1.SelectedIndex == -1 || cb_tipus_a1.SelectedIndex == -1 || cb_tetel_a1.SelectedIndex == -1 || cb_mertek_a1.SelectedIndex == -1 || tb_menny_a1.Text == "") //ha nincs foglalás, akkor ne fusson le, mert kifagy!
+            {
+                szamla_a1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                szamla_a1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                szamla_a1.DataSource = con.tablazatot_ad("SELECT r.id AS 'Rendelés ID', r.fogl_id AS 'Foglalás ID', t.nev AS 'Tétel', r.adag AS 'Mennyiség', "
+                                        + "m.nev AS 'Mértékegység', e.egysegar AS 'Egységár', (r.adag * e.egysegar) AS 'Összesen' "
+                                        + "FROM rendelesek r JOIN tetelek t On r.tetel_id = t.id "
+                                        + "JOIN egysegarak e ON t.id = e.tetel_id JOIN mertekegyseg m ON t.mertek_id = m.id "
+                                        + "JOIN foglalas f ON f.id = r.fogl_id WHERE f.asztal_id = 1").Tables[0]; //Feltölti a datagridet.
+
+                szamla_a1.ClearSelection();
+
+                osszeg_a1 = 0;
+                for (int i = 0; i < szamla_a1.Rows.Count; i++)
+                {
+
+                    osszeg_a1 += Convert.ToInt32(szamla_a1.Rows[i].Cells[6].Value);
+
+                }
+                lb_osszeg_a1.Text = "Végösszeg: " + osszeg_a1.ToString() + " Ft.-";
+            }
+            else
+            {
+                if (foglalt)
+                {
+                    string fogl_id = con.szamot_ad("SELECT id FROM foglalas WHERE asztal_id = 1");
+
+                    int foglid = Convert.ToInt32(fogl_id);
+
+                    szamla_a1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    szamla_a1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                    if (tb_menny_a1.Text == "")
+                    {
+                        MessageBox.Show("A mezőt kötelező kitölteni!");
+                    }
+                    else
+                    {
+                        string osszesleker = con.szamot_ad("SELECT egysegar FROM egysegarak WHERE tetel_id = (SELECT id FROM tetelek WHERE nev = '" + cb_tetel_a1.Text + "')"); //lekéri az egységárat 
+
+                        int osszes = Convert.ToInt32(osszesleker);
+
+                        string tetel_id = con.szamot_ad("SELECT id FROM tetelek WHERE nev = '" + cb_tetel_a1.Text + "'");
+                        //MessageBox.Show(tetel_id);
+                        int tetelid = Convert.ToInt32(tetel_id);
+
+                        int adag = Convert.ToInt32(tb_menny_a1.Text);
+
+                        con.feltolt("INSERT INTO rendelesek (fogl_id, tetel_id, adag) VALUES (" + foglid + "," + tetelid + "," + adag + ")");
+
+
+
+                        szamla_a1.DataSource = con.tablazatot_ad("SELECT r.id AS 'Rendelés ID', r.fogl_id AS 'Foglalás ID', t.nev AS 'Tétel', r.adag AS 'Mennyiség', "
+                                            + "m.nev AS 'Mértékegység', e.egysegar AS 'Egységár', (r.adag * e.egysegar) AS 'Összesen' "
+                                            + "FROM rendelesek r JOIN tetelek t On r.tetel_id = t.id "
+                                            + "JOIN egysegarak e ON t.id = e.tetel_id JOIN mertekegyseg m ON t.mertek_id = m.id "
+                                            + "JOIN foglalas f ON f.id = r.fogl_id WHERE f.asztal_id = 1").Tables[0];
+
+                        szamla_a1.ClearSelection();
+
+                        osszeg_a1 = 0;
+                        for (int i = 0; i < szamla_a1.Rows.Count; i++)
+                        {
+                            osszeg_a1 += Convert.ToInt32(szamla_a1.Rows[i].Cells[6].Value);
+                        }
+                        lb_osszeg_a1.Text = "Végösszeg: " + osszeg_a1.ToString() + " Ft.-";
+                        tb_menny_a1.Clear();
+                    }
+                }
+            }
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //-------------------------2-es asztal datagrid---------------------------------------------------------------------------------------------------------------------------
+
+        private void Tb_menny_a2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void hozzaad_a2_Click(object sender, EventArgs e)
+        {
+
+            bool ures = (szamla_a2.DataSource == null); //ezt használom majd a rendelés közben befutó újabb rendelés vizsgálatánál
+
+            bool foglalt;
+            try { foglalt = Convert.ToDateTime(DateTime.Now.ToShortDateString()) == Convert.ToDateTime(con.rekord("SELECT datum FROM foglalas WHERE asztal_id = 2")[0]); }
+            catch { foglalt = false; MessageBox.Show("Vegyen fel foglalást!"); }
+
+
+            if (cb_kat_a2.SelectedIndex == -1 || cb_tipus_a2.SelectedIndex == -1 || cb_tetel_a2.SelectedIndex == -1 || cb_mertek_a2.SelectedIndex == -1 || tb_menny_a2.Text == "") //ha nincs foglalás, akkor ne fusson le, mert kifagy!
+            {
+                szamla_a2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                szamla_a2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                szamla_a2.DataSource = con.tablazatot_ad("SELECT r.id AS 'Rendelés ID', r.fogl_id AS 'Foglalás ID', t.nev AS 'Tétel', r.adag AS 'Mennyiség', "
+                                        + "m.nev AS 'Mértékegység', e.egysegar AS 'Egységár', (r.adag * e.egysegar) AS 'Összesen' "
+                                        + "FROM rendelesek r JOIN tetelek t On r.tetel_id = t.id "
+                                        + "JOIN egysegarak e ON t.id = e.tetel_id JOIN mertekegyseg m ON t.mertek_id = m.id "
+                                        + "JOIN foglalas f ON f.id = r.fogl_id WHERE f.asztal_id = 2").Tables[0];
+
+                szamla_a2.ClearSelection();
+
+                osszeg_a2 = 0;
+                for (int i = 0; i < szamla_a2.Rows.Count; i++)
+                {
+
+                    osszeg_a2 += Convert.ToInt32(szamla_a2.Rows[i].Cells[6].Value);
+
+                }
+                lb_osszeg_a2.Text = "Végösszeg: " + osszeg_a2.ToString() + " Ft.-";
+            }
+            else
+            {
+                if (foglalt)
+                {
+                    string fogl_id = con.szamot_ad("SELECT id FROM foglalas WHERE asztal_id = 2");
+
+                    int foglid = Convert.ToInt32(fogl_id);
+
+                    szamla_a2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    szamla_a2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                    if (tb_menny_a2.Text == "")
+                    {
+                        MessageBox.Show("A mezőt kötelező kitölteni!");
+                    }
+                    else
+                    {
+                        string osszesleker = con.szamot_ad("SELECT egysegar FROM egysegarak WHERE tetel_id = (SELECT id FROM tetelek WHERE nev = '" + cb_tetel_a2.Text + "')"); //lekéri az egységárat 
+
+                        int osszes = Convert.ToInt32(osszesleker);
+
+                        string tetel_id = con.szamot_ad("SELECT id FROM tetelek WHERE nev = '" + cb_tetel_a2.Text + "'");
+                        //MessageBox.Show(tetel_id);
+                        int tetelid = Convert.ToInt32(tetel_id);
+
+                        int adag = Convert.ToInt32(tb_menny_a2.Text);
+
+                        con.feltolt("INSERT INTO rendelesek (fogl_id, tetel_id, adag) VALUES (" + foglid + "," + tetelid + "," + adag + ")");
+
+
+
+                        szamla_a2.DataSource = con.tablazatot_ad("SELECT r.id AS 'Rendelés ID', r.fogl_id AS 'Foglalás ID', t.nev AS 'Tétel', r.adag AS 'Mennyiség', "
+                                            + "m.nev AS 'Mértékegység', e.egysegar AS 'Egységár', (r.adag * e.egysegar) AS 'Összesen' "
+                                            + "FROM rendelesek r JOIN tetelek t On r.tetel_id = t.id "
+                                            + "JOIN egysegarak e ON t.id = e.tetel_id JOIN mertekegyseg m ON t.mertek_id = m.id "
+                                            + "JOIN foglalas f ON f.id = r.fogl_id WHERE f.asztal_id = 2").Tables[0];
+
+                        szamla_a2.ClearSelection();
+
+                        osszeg_a2 = 0;
+                        for (int i = 0; i < szamla_a2.Rows.Count; i++)
+                        {
+                            osszeg_a2 += Convert.ToInt32(szamla_a2.Rows[i].Cells[6].Value);
+                        }
+                        lb_osszeg_a2.Text = "Végösszeg: " + osszeg_a2.ToString() + " Ft.-";
+                        tb_menny_a2.Clear();
+                    }
+                }
+            }
+
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //-------------------------3-as asztal datagrid---------------------------------------------------------------------------------------------------------------------------
+
+        private void Tb_menny_a3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void hozzaad_a3_Click(object sender, EventArgs e)
+        {
+            bool ures = (szamla_a3.DataSource == null); //ezt használom majd a rendelés közben befutó újabb rendelés vizsgálatánál
+
+            bool foglalt;
+            try { foglalt = Convert.ToDateTime(DateTime.Now.ToShortDateString()) == Convert.ToDateTime(con.rekord("SELECT datum FROM foglalas WHERE asztal_id = 3")[0]); }
+            catch { foglalt = false; MessageBox.Show("Vegyen fel foglalást!"); }
+
+
+            if (cb_kat_a3.SelectedIndex == -1 || cb_tipus_a3.SelectedIndex == -1 || cb_tetel_a3.SelectedIndex == -1 || cb_mertek_a3.SelectedIndex == -1 || tb_menny_a3.Text == "") //ha nincs foglalás, akkor ne fusson le, mert kifagy!
+            {
+                szamla_a3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                szamla_a3.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                szamla_a3.DataSource = con.tablazatot_ad("SELECT r.id AS 'Rendelés ID', r.fogl_id AS 'Foglalás ID', t.nev AS 'Tétel', r.adag AS 'Mennyiség', "
+                                        + "m.nev AS 'Mértékegység', e.egysegar AS 'Egységár', (r.adag * e.egysegar) AS 'Összesen' "
+                                        + "FROM rendelesek r JOIN tetelek t On r.tetel_id = t.id "
+                                        + "JOIN egysegarak e ON t.id = e.tetel_id JOIN mertekegyseg m ON t.mertek_id = m.id "
+                                        + "JOIN foglalas f ON f.id = r.fogl_id WHERE f.asztal_id = 3").Tables[0];
+
+                szamla_a3.ClearSelection();
+
+                osszeg_a3 = 0;
+                for (int i = 0; i < szamla_a3.Rows.Count; i++)
+                {
+
+                    osszeg_a3 += Convert.ToInt32(szamla_a3.Rows[i].Cells[6].Value);
+
+                }
+                lb_osszeg_a3.Text = "Végösszeg: " + osszeg_a3.ToString() + " Ft.-";
+            }
+            else
+            {
+                if (foglalt)
+                {
+                    string fogl_id = con.szamot_ad("SELECT id FROM foglalas WHERE asztal_id = 3");
+
+                    int foglid = Convert.ToInt32(fogl_id);
+
+                    szamla_a3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    szamla_a3.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                    if (tb_menny_a3.Text == "")
+                    {
+                        MessageBox.Show("A mezőt kötelező kitölteni!");
+                    }
+                    else
+                    {
+                        string osszesleker = con.szamot_ad("SELECT egysegar FROM egysegarak WHERE tetel_id = (SELECT id FROM tetelek WHERE nev = '" + cb_tetel_a3.Text + "')"); //lekéri az egységárat 
+
+                        int osszes = Convert.ToInt32(osszesleker);
+
+                        string tetel_id = con.szamot_ad("SELECT id FROM tetelek WHERE nev = '" + cb_tetel_a3.Text + "'");
+                        //MessageBox.Show(tetel_id);
+                        int tetelid = Convert.ToInt32(tetel_id);
+
+                        int adag = Convert.ToInt32(tb_menny_a3.Text);
+
+                        con.feltolt("INSERT INTO rendelesek (fogl_id, tetel_id, adag) VALUES (" + foglid + "," + tetelid + "," + adag + ")");
+
+
+
+                        szamla_a3.DataSource = con.tablazatot_ad("SELECT r.id AS 'Rendelés ID', r.fogl_id AS 'Foglalás ID', t.nev AS 'Tétel', r.adag AS 'Mennyiség', "
+                                            + "m.nev AS 'Mértékegység', e.egysegar AS 'Egységár', (r.adag * e.egysegar) AS 'Összesen' "
+                                            + "FROM rendelesek r JOIN tetelek t On r.tetel_id = t.id "
+                                            + "JOIN egysegarak e ON t.id = e.tetel_id JOIN mertekegyseg m ON t.mertek_id = m.id "
+                                            + "JOIN foglalas f ON f.id = r.fogl_id WHERE f.asztal_id = 3").Tables[0];
+
+                        szamla_a3.ClearSelection();
+
+                        osszeg_a3 = 0;
+                        for (int i = 0; i < szamla_a3.Rows.Count; i++)
+                        {
+                            osszeg_a3 += Convert.ToInt32(szamla_a3.Rows[i].Cells[6].Value);
+                        }
+                        lb_osszeg_a3.Text = "Végösszeg: " + osszeg_a3.ToString() + " Ft.-";
+                        tb_menny_a3.Clear();
+                    }
+                }
+            }
+
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //-------------------------4-es asztal datagrid---------------------------------------------------------------------------------------------------------------------------
+
+        private void Tb_menny_a4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void hozzaad_a4_Click(object sender, EventArgs e)
+        {
+
+            bool ures = (szamla_a4.DataSource == null); //ezt használom majd a rendelés közben befutó újabb rendelés vizsgálatánál
+
+            bool foglalt;
+            try { foglalt = Convert.ToDateTime(DateTime.Now.ToShortDateString()) == Convert.ToDateTime(con.rekord("SELECT datum FROM foglalas WHERE asztal_id = 4")[0]); }
+            catch { foglalt = false; MessageBox.Show("Vegyen fel foglalást!"); }
+
+
+            if (cb_kat_a4.SelectedIndex == -1 || cb_tipus_a4.SelectedIndex == -1 || cb_tetel_a4.SelectedIndex == -1 || cb_mertek_a4.SelectedIndex == -1 || tb_menny_a4.Text == "") //ha nincs foglalás, akkor ne fusson le, mert kifagy!
+            {
+                szamla_a4.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                szamla_a4.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                szamla_a4.DataSource = con.tablazatot_ad("SELECT r.id AS 'Rendelés ID', r.fogl_id AS 'Foglalás ID', t.nev AS 'Tétel', r.adag AS 'Mennyiség', "
+                                        + "m.nev AS 'Mértékegység', e.egysegar AS 'Egységár', (r.adag * e.egysegar) AS 'Összesen' "
+                                        + "FROM rendelesek r JOIN tetelek t On r.tetel_id = t.id "
+                                        + "JOIN egysegarak e ON t.id = e.tetel_id JOIN mertekegyseg m ON t.mertek_id = m.id "
+                                        + "JOIN foglalas f ON f.id = r.fogl_id WHERE f.asztal_id = 4").Tables[0];
+
+                szamla_a4.ClearSelection();
+
+                osszeg_a4 = 0;
+                for (int i = 0; i < szamla_a4.Rows.Count; i++)
+                {
+
+                    osszeg_a4 += Convert.ToInt32(szamla_a4.Rows[i].Cells[6].Value);
+
+                }
+                lb_osszeg_a4.Text = "Végösszeg: " + osszeg_a4.ToString() + " Ft.-";
+            }
+            else
+            {
+                if (foglalt)
+                {
+                    string fogl_id = con.szamot_ad("SELECT id FROM foglalas WHERE asztal_id = 4");
+
+                    int foglid = Convert.ToInt32(fogl_id);
+
+                    szamla_a4.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    szamla_a4.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                    if (tb_menny_a4.Text == "")
+                    {
+                        MessageBox.Show("A mezőt kötelező kitölteni!");
+                    }
+                    else
+                    {
+                        string osszesleker = con.szamot_ad("SELECT egysegar FROM egysegarak WHERE tetel_id = (SELECT id FROM tetelek WHERE nev = '" + cb_tetel_a4.Text + "')"); //lekéri az egységárat 
+
+                        int osszes = Convert.ToInt32(osszesleker);
+
+                        string tetel_id = con.szamot_ad("SELECT id FROM tetelek WHERE nev = '" + cb_tetel_a4.Text + "'");
+                        //MessageBox.Show(tetel_id);
+                        int tetelid = Convert.ToInt32(tetel_id);
+
+                        int adag = Convert.ToInt32(tb_menny_a4.Text);
+
+                        con.feltolt("INSERT INTO rendelesek (fogl_id, tetel_id, adag) VALUES (" + foglid + "," + tetelid + "," + adag + ")");
+
+
+
+                        szamla_a4.DataSource = con.tablazatot_ad("SELECT r.id AS 'Rendelés ID', r.fogl_id AS 'Foglalás ID', t.nev AS 'Tétel', r.adag AS 'Mennyiség', "
+                                            + "m.nev AS 'Mértékegység', e.egysegar AS 'Egységár', (r.adag * e.egysegar) AS 'Összesen' "
+                                            + "FROM rendelesek r JOIN tetelek t On r.tetel_id = t.id "
+                                            + "JOIN egysegarak e ON t.id = e.tetel_id JOIN mertekegyseg m ON t.mertek_id = m.id "
+                                            + "JOIN foglalas f ON f.id = r.fogl_id WHERE f.asztal_id = 4").Tables[0];
+
+                        szamla_a4.ClearSelection();
+
+                        osszeg_a4 = 0;
+                        for (int i = 0; i < szamla_a4.Rows.Count; i++)
+                        {
+                            osszeg_a4 += Convert.ToInt32(szamla_a4.Rows[i].Cells[6].Value);
+                        }
+                        lb_osszeg_a4.Text = "Végösszeg: " + osszeg_a4.ToString() + " Ft.-";
+                        tb_menny_a4.Clear();
+                    }
+                }
+            }
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        //-------------------------5-ös asztal datagrid---------------------------------------------------------------------------------------------------------------------------
+
+        private void Tb_menny_a5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+                e.Handled = true;
+        }
+
+
+        private void hozzaad_a5_Click(object sender, EventArgs e)
+        {
+
+            bool ures = (szamla_a5.DataSource == null); //ezt használom majd a rendelés közben befutó újabb rendelés vizsgálatánál
+
+            bool foglalt;
+            try { foglalt = Convert.ToDateTime(DateTime.Now.ToShortDateString()) == Convert.ToDateTime(con.rekord("SELECT datum FROM foglalas WHERE asztal_id = 5")[0]); }
+            catch { foglalt = false; MessageBox.Show("Vegyen fel foglalást!"); }
+
+
+            if (cb_kat_a5.SelectedIndex == -1 || cb_tipus_a5.SelectedIndex == -1 || cb_tetel_a5.SelectedIndex == -1 || cb_mertek_a5.SelectedIndex == -1 || tb_menny_a5.Text == "") //ha nincs foglalás, akkor ne fusson le, mert kifagy!
+            {
+                szamla_a5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                szamla_a5.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                szamla_a5.DataSource = con.tablazatot_ad("SELECT r.id AS 'Rendelés ID', r.fogl_id AS 'Foglalás ID', t.nev AS 'Tétel', r.adag AS 'Mennyiség', "
+                                        + "m.nev AS 'Mértékegység', e.egysegar AS 'Egységár', (r.adag * e.egysegar) AS 'Összesen' "
+                                        + "FROM rendelesek r JOIN tetelek t On r.tetel_id = t.id "
+                                        + "JOIN egysegarak e ON t.id = e.tetel_id JOIN mertekegyseg m ON t.mertek_id = m.id "
+                                        + "JOIN foglalas f ON f.id = r.fogl_id WHERE f.asztal_id = 5").Tables[0];
+
+                szamla_a5.ClearSelection();
+
+                osszeg_a5 = 0;
+                for (int i = 0; i < szamla_a5.Rows.Count; i++)
+                {
+
+                    osszeg_a5 += Convert.ToInt32(szamla_a5.Rows[i].Cells[6].Value);
+
+                }
+                lb_osszeg_a5.Text = "Végösszeg: " + osszeg_a5.ToString() + " Ft.-";
+            }
+            else
+            {
+                if (foglalt)
+                {
+                    string fogl_id = con.szamot_ad("SELECT id FROM foglalas WHERE asztal_id = 5");
+
+                    int foglid = Convert.ToInt32(fogl_id);
+
+                    szamla_a5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    szamla_a5.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                    if (tb_menny_a5.Text == "")
+                    {
+                        MessageBox.Show("A mezőt kötelező kitölteni!");
+                    }
+                    else
+                    {
+                        string osszesleker = con.szamot_ad("SELECT egysegar FROM egysegarak WHERE tetel_id = (SELECT id FROM tetelek WHERE nev = '" + cb_tetel_a5.Text + "')"); //lekéri az egységárat 
+
+                        int osszes = Convert.ToInt32(osszesleker);
+
+                        string tetel_id = con.szamot_ad("SELECT id FROM tetelek WHERE nev = '" + cb_tetel_a5.Text + "'");
+                        //MessageBox.Show(tetel_id);
+                        int tetelid = Convert.ToInt32(tetel_id);
+
+                        int adag = Convert.ToInt32(tb_menny_a5.Text);
+
+                        con.feltolt("INSERT INTO rendelesek (fogl_id, tetel_id, adag) VALUES (" + foglid + "," + tetelid + "," + adag + ")");
+
+
+
+                        szamla_a5.DataSource = con.tablazatot_ad("SELECT r.id AS 'Rendelés ID', r.fogl_id AS 'Foglalás ID', t.nev AS 'Tétel', r.adag AS 'Mennyiség', "
+                                            + "m.nev AS 'Mértékegység', e.egysegar AS 'Egységár', (r.adag * e.egysegar) AS 'Összesen' "
+                                            + "FROM rendelesek r JOIN tetelek t On r.tetel_id = t.id "
+                                            + "JOIN egysegarak e ON t.id = e.tetel_id JOIN mertekegyseg m ON t.mertek_id = m.id "
+                                            + "JOIN foglalas f ON f.id = r.fogl_id WHERE f.asztal_id = 5").Tables[0];
+
+                        szamla_a5.ClearSelection();
+
+                        osszeg_a5 = 0;
+                        for (int i = 0; i < szamla_a5.Rows.Count; i++)
+                        {
+                            osszeg_a5 += Convert.ToInt32(szamla_a5.Rows[i].Cells[6].Value);
+                        }
+                        lb_osszeg_a5.Text = "Végösszeg: " + osszeg_a5.ToString() + " Ft.-";
+                        tb_menny_a5.Clear();
+                    }
+                }
+            }
+        }
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //-------------------------6-os asztal datagrid---------------------------------------------------------------------------------------------------------------------------
+
+        private void Tb_menny_a6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void hozzaad_a6_Click(object sender, EventArgs e)
+        {
+
+            bool ures = (szamla_a6.DataSource == null); //ezt használom majd a rendelés közben befutó újabb rendelés vizsgálatánál
+
+            bool foglalt;
+            try { foglalt = Convert.ToDateTime(DateTime.Now.ToShortDateString()) == Convert.ToDateTime(con.rekord("SELECT datum FROM foglalas WHERE asztal_id = 6")[0]); }
+            catch { foglalt = false; MessageBox.Show("Vegyen fel foglalást!"); }
+
+
+            if (cb_kat_a6.SelectedIndex == -1 || cb_tipus_a6.SelectedIndex == -1 || cb_tetel_a6.SelectedIndex == -1 || cb_mertek_a6.SelectedIndex == -1 || tb_menny_a6.Text == "") //ha nincs foglalás, akkor ne fusson le, mert kifagy!
+            {
+                szamla_a6.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                szamla_a6.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                szamla_a6.DataSource = con.tablazatot_ad("SELECT r.id AS 'Rendelés ID', r.fogl_id AS 'Foglalás ID', t.nev AS 'Tétel', r.adag AS 'Mennyiség', "
+                                        + "m.nev AS 'Mértékegység', e.egysegar AS 'Egységár', (r.adag * e.egysegar) AS 'Összesen' "
+                                        + "FROM rendelesek r JOIN tetelek t On r.tetel_id = t.id "
+                                        + "JOIN egysegarak e ON t.id = e.tetel_id JOIN mertekegyseg m ON t.mertek_id = m.id "
+                                        + "JOIN foglalas f ON f.id = r.fogl_id WHERE f.asztal_id = 6").Tables[0];
+
+                szamla_a6.ClearSelection();
+
+                osszeg_a6 = 0;
+                for (int i = 0; i < szamla_a6.Rows.Count; i++)
+                {
+
+                    osszeg_a6 += Convert.ToInt32(szamla_a6.Rows[i].Cells[6].Value);
+
+                }
+                lb_osszeg_a6.Text = "Végösszeg: " + osszeg_a6.ToString() + " Ft.-";
+            }
+            else
+            {
+                if (foglalt)
+                {
+                    string fogl_id = con.szamot_ad("SELECT id FROM foglalas WHERE asztal_id = 6");
+
+                    int foglid = Convert.ToInt32(fogl_id);
+
+                    szamla_a6.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    szamla_a6.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                    if (tb_menny_a6.Text == "")
+                    {
+                        MessageBox.Show("A mezőt kötelező kitölteni!");
+                    }
+                    else
+                    {
+                        string osszesleker = con.szamot_ad("SELECT egysegar FROM egysegarak WHERE tetel_id = (SELECT id FROM tetelek WHERE nev = '" + cb_tetel_a6.Text + "')"); //lekéri az egységárat 
+
+                        int osszes = Convert.ToInt32(osszesleker);
+
+                        string tetel_id = con.szamot_ad("SELECT id FROM tetelek WHERE nev = '" + cb_tetel_a6.Text + "'");
+                        //MessageBox.Show(tetel_id);
+                        int tetelid = Convert.ToInt32(tetel_id);
+
+                        int adag = Convert.ToInt32(tb_menny_a6.Text);
+
+                        con.feltolt("INSERT INTO rendelesek (fogl_id, tetel_id, adag) VALUES (" + foglid + "," + tetelid + "," + adag + ")");
+
+
+
+                        szamla_a6.DataSource = con.tablazatot_ad("SELECT r.id AS 'Rendelés ID', r.fogl_id AS 'Foglalás ID', t.nev AS 'Tétel', r.adag AS 'Mennyiség', "
+                                            + "m.nev AS 'Mértékegység', e.egysegar AS 'Egységár', (r.adag * e.egysegar) AS 'Összesen' "
+                                            + "FROM rendelesek r JOIN tetelek t On r.tetel_id = t.id "
+                                            + "JOIN egysegarak e ON t.id = e.tetel_id JOIN mertekegyseg m ON t.mertek_id = m.id "
+                                            + "JOIN foglalas f ON f.id = r.fogl_id WHERE f.asztal_id = 6").Tables[0];
+
+                        szamla_a6.ClearSelection();
+
+                        osszeg_a6 = 0;
+                        for (int i = 0; i < szamla_a6.Rows.Count; i++)
+                        {
+                            osszeg_a6 += Convert.ToInt32(szamla_a6.Rows[i].Cells[6].Value);
+                        }
+                        lb_osszeg_a6.Text = "Végösszeg: " + osszeg_a6.ToString() + " Ft.-";
+                        tb_menny_a6.Clear();
+                    }
+                }
+            }
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #endregion
+
     }
 }
