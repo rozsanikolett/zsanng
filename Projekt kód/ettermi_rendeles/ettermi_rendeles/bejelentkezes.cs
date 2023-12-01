@@ -17,6 +17,7 @@ namespace ettermi_rendeles
             InitializeComponent();
         }
 
+        pincer_fooldal pincer = new pincer_fooldal();
         Label lb_bej, lb_felhnev, lb_jelszo;
         TextBox tb_fh, tb_jelszo;
         Button btn_bej;
@@ -114,25 +115,16 @@ namespace ettermi_rendeles
 
         private void Btn_bej_Click(object sender, EventArgs e)
         {
-            /* //felhasználó + jelszo check adatbázisból 
-               // ???-eket le kell cserélni majd az adatbazisra 
-               // + átirányítás kell majd a main ablakra 
-
-
-            adatbazis ??? = new adatbazis();
+            adatbazis con = new adatbazis();
             if (tb_fh.Text != "" && tb_jelszo.Text != "")
             {
-                string[] users = ???.rekord("SELECT id FROM user WHERE felh = '" + tb_fh.Text + "' and jelszo = '" + tb_jelszo.Text + "'");
+                string[] users = con.rekord("SELECT id FROM user WHERE felh = '" + tb_fh.Text + "' and jelszo = '" + tb_jelszo.Text + "'");
                 if (users != null)
                 {
                     int id = Convert.ToInt32(users[0]);
-                    
-
-
+                    pincer_fooldal pincerfooldal = new pincer_fooldal();
                     MessageBox.Show("Sikeres bejelentkezés!");
-                    
-                    .Show();    
-
+                    pincerfooldal.Show();
                     Hide();
                 }
                 else
@@ -144,10 +136,8 @@ namespace ettermi_rendeles
             else
             {
                 MessageBox.Show("A mező nincs kitöltve!");
-            }*/
+            }
         }
-
-
     }
 }
 
