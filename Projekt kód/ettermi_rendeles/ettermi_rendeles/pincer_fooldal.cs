@@ -1043,5 +1043,198 @@ namespace ettermi_rendeles
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         #endregion
 
+        #region asztalok törlés gomb
+
+        //-------------------1-es asztal törlés-----------------------
+
+        private void torles_a1_Click(object sender, EventArgs e)
+        {
+            if (szamla_a1.SelectedRows.Count != 0)
+            {
+                string id = szamla_a1.Rows[0].Cells[0].Value.ToString();
+                con.torles("DELETE FROM rendelesek WHERE id = " + id + "");
+
+                int rowIndex_a1 = szamla_a1.CurrentCell.RowIndex;
+                szamla_a1.Rows.RemoveAt(rowIndex_a1);
+                szamla_a1.ClearSelection();
+
+
+                osszeg_a1 = 0;
+                for (int i = 0; i < szamla_a1.Rows.Count; i++)
+                {
+                    osszeg_a1 += Convert.ToInt32(szamla_a1.Rows[i].Cells[6].Value);
+                }
+                lb_osszeg_a1.Text = "Végösszeg: " + osszeg_a1.ToString() + " Ft.-";
+            }
+            else
+            {
+                MessageBox.Show("A törléshez jelöljön ki egy sort!");
+            }
+
+
+        }
+
+
+
+        //------------------------------------------------------------
+
+        //-------------------2-es asztal törlés-----------------------
+
+        private void Torles_a2_Click(object sender, EventArgs e)
+        {
+            if (szamla_a2.SelectedRows.Count != 0)
+            {
+                string id = szamla_a1.Rows[0].Cells[0].Value.ToString();
+                con.torles("DELETE FROM rendelesek WHERE id = " + id + "");
+
+                int rowIndex_a2 = szamla_a2.CurrentCell.RowIndex;
+                szamla_a2.Rows.RemoveAt(rowIndex_a2);
+                szamla_a2.ClearSelection();
+
+
+                osszeg_a2 = 0;
+                for (int i = 0; i < szamla_a2.Rows.Count; i++)
+                {
+                    osszeg_a2 += Convert.ToInt32(szamla_a2.Rows[i].Cells[6].Value);
+                }
+                lb_osszeg_a2.Text = "Végösszeg: " + osszeg_a2.ToString() + " Ft.-";
+            }
+            else
+            {
+                MessageBox.Show("A törléshez jelöljön ki egy sort!");
+            }
+        }
+
+
+
+        //------------------------------------------------------------
+
+        //-------------------3-as asztal törlés-----------------------
+
+        private void Torles_a3_Click(object sender, EventArgs e)
+        {
+            if (szamla_a3.SelectedRows.Count != 0)
+            {
+                string id = szamla_a3.Rows[0].Cells[0].Value.ToString();
+                con.torles("DELETE FROM rendelesek WHERE id = " + id + "");
+
+                int rowIndex_a3 = szamla_a3.CurrentCell.RowIndex;
+                szamla_a3.Rows.RemoveAt(rowIndex_a3);
+                szamla_a3.ClearSelection();
+
+
+                osszeg_a3 = 0;
+                for (int i = 0; i < szamla_a3.Rows.Count; i++)
+                {
+                    osszeg_a3 += Convert.ToInt32(szamla_a3.Rows[i].Cells[6].Value);
+                }
+                lb_osszeg_a3.Text = "Végösszeg: " + osszeg_a3.ToString() + " Ft.-";
+            }
+            else
+            {
+                MessageBox.Show("A törléshez jelöljön ki egy sort!");
+            }
+        }
+
+
+
+        //------------------------------------------------------------
+
+        //-------------------4-es asztal törlés-----------------------
+
+        private void Torles_a4_Click(object sender, EventArgs e)
+        {
+            if (szamla_a4.SelectedRows.Count != 0)
+            {
+                string id = szamla_a4.Rows[0].Cells[0].Value.ToString();
+                con.torles("DELETE FROM rendelesek WHERE id = " + id + "");
+
+                int rowIndex_a4 = szamla_a4.CurrentCell.RowIndex;
+                szamla_a4.Rows.RemoveAt(rowIndex_a4);
+                szamla_a4.ClearSelection();
+
+
+                osszeg_a4 = 0;
+                for (int i = 0; i < szamla_a4.Rows.Count; i++)
+                {
+                    osszeg_a4 += Convert.ToInt32(szamla_a4.Rows[i].Cells[6].Value);
+                }
+                lb_osszeg_a4.Text = "Végösszeg: " + osszeg_a4.ToString() + " Ft.-";
+            }
+            else
+            {
+                MessageBox.Show("A törléshez jelöljön ki egy sort!");
+            }
+        }
+
+
+
+
+
+        //------------------------------------------------------------
+
+        //-------------------5-ös asztal törlés-----------------------
+
+        private void Torles_a5_Click(object sender, EventArgs e)
+        {
+            if (szamla_a5.SelectedRows.Count != 0)
+            {
+                string id = szamla_a5.Rows[0].Cells[0].Value.ToString();
+                con.torles("DELETE FROM rendelesek WHERE id = " + id + "");
+
+                int rowIndex_a5 = szamla_a1.CurrentCell.RowIndex;
+                szamla_a5.Rows.RemoveAt(rowIndex_a5);
+                szamla_a5.ClearSelection();
+
+
+                osszeg_a5 = 0;
+                for (int i = 0; i < szamla_a5.Rows.Count; i++)
+                {
+                    osszeg_a5 += Convert.ToInt32(szamla_a5.Rows[i].Cells[6].Value);
+                }
+                lb_osszeg_a5.Text = "Végösszeg: " + osszeg_a5.ToString() + " Ft.-";
+            }
+            else
+            {
+                MessageBox.Show("A törléshez jelöljön ki egy sort!");
+            }
+        }
+
+
+
+        //------------------------------------------------------------
+
+        //-------------------6-os asztal törlés-----------------------
+
+        private void Torles_a6_Click(object sender, EventArgs e)
+        {
+            if (szamla_a6.SelectedRows.Count != 0)
+            {
+                string id = szamla_a6.Rows[0].Cells[0].Value.ToString();
+                con.torles("DELETE FROM rendelesek WHERE id = " + id + "");
+
+                int rowIndex_a6 = szamla_a6.CurrentCell.RowIndex;
+                szamla_a6.Rows.RemoveAt(rowIndex_a6);
+                szamla_a6.ClearSelection();
+
+
+                osszeg_a6 = 0;
+                for (int i = 0; i < szamla_a6.Rows.Count; i++)
+                {
+                    osszeg_a6 += Convert.ToInt32(szamla_a6.Rows[i].Cells[6].Value);
+                }
+                lb_osszeg_a6.Text = "Végösszeg: " + osszeg_a6.ToString() + " Ft.-";
+            }
+            else
+            {
+                MessageBox.Show("A törléshez jelöljön ki egy sort!");
+            }
+        }
+
+
+
+        //------------------------------------------------------------
+        #endregion
+
     }
 }
