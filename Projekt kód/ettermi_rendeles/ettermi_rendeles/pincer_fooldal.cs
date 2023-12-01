@@ -1236,5 +1236,116 @@ namespace ettermi_rendeles
         //------------------------------------------------------------
         #endregion
 
+        #region fizetve gomb
+
+        private void fizetve_a1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string foglalas_id = con.szamot_ad("SELECT id FROM foglalas WHERE asztal_id = 1");
+                con.torles("DELETE FROM rendelesek WHERE fogl_id = '" + foglalas_id + "'");
+                con.torles("DELETE from foglalas WHERE id = " + foglalas_id + "");
+                szamla_a1.DataSource = null;
+                osszeg_a1 = 0;
+                lb_osszeg_a1.Text = "Végösszeg: " + osszeg_a1.ToString() + ".-Ft";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nincs rendelés");
+            }
+
+        }
+
+        private void fizetve_a2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string foglalas_id = con.szamot_ad("SELECT id FROM foglalas WHERE asztal_id = 2");
+                con.torles("DELETE FROM rendelesek WHERE fogl_id = '" + foglalas_id + "'");
+                con.torles("DELETE from foglalas WHERE id = " + foglalas_id + "");
+                szamla_a2.DataSource = null;
+                osszeg_a2 = 0;
+                lb_osszeg_a2.Text = "Végösszeg: " + osszeg_a2.ToString() + ".-Ft";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nincs rendelés");
+            }
+
+        }
+
+        private void fizetve_a3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string foglalas_id = con.szamot_ad("SELECT id FROM foglalas WHERE asztal_id = 3");
+                con.torles("DELETE FROM rendelesek WHERE fogl_id = '" + foglalas_id + "'");
+                con.torles("DELETE from foglalas WHERE id = " + foglalas_id + "");
+                szamla_a3.DataSource = null;
+                osszeg_a3 = 0;
+                lb_osszeg_a3.Text = "Végösszeg: " + osszeg_a3.ToString() + ".-Ft";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nincs rendelés");
+            }
+
+        }
+
+        private void fizetve_a4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string foglalas_id = con.szamot_ad("SELECT id FROM foglalas WHERE asztal_id = 4");
+                con.torles("DELETE FROM rendelesek WHERE fogl_id = '" + foglalas_id + "'");
+                con.torles("DELETE from foglalas WHERE id = " + foglalas_id + "");
+                szamla_a4.DataSource = null;
+                osszeg_a4 = 0;
+                lb_osszeg_a4.Text = "Végösszeg: " + osszeg_a4.ToString() + ".-Ft";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nincs rendelés");
+            }
+
+        }
+
+        private void fizetve_a5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string foglalas_id = con.szamot_ad("SELECT id FROM foglalas WHERE asztal_id = 5");
+                con.torles("DELETE FROM rendelesek WHERE fogl_id = '" + foglalas_id + "'");
+                con.torles("DELETE from foglalas WHERE id = " + foglalas_id + "");
+                szamla_a5.DataSource = null;
+                osszeg_a5 = 0;
+                lb_osszeg_a5.Text = "Végösszeg: " + osszeg_a5.ToString() + ".-Ft";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nincs rendelés");
+            }
+
+        }
+
+        private void fizetve_a6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string foglalas_id = con.szamot_ad("SELECT id FROM foglalas WHERE asztal_id = 6");
+                con.torles("DELETE FROM rendelesek WHERE fogl_id = '" + foglalas_id + "'");
+                con.torles("DELETE from foglalas WHERE id = " + foglalas_id + "");
+                szamla_a6.DataSource = null;
+                osszeg_a6 = 0;
+                lb_osszeg_a6.Text = "Végösszeg: " + osszeg_a6.ToString() + ".-Ft";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nincs rendelés");
+            }
+        }
+
+        #endregion
+
     }
 }
