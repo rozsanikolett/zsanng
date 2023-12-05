@@ -22,3 +22,9 @@ Projektünk célja egy tiszteletteljes és befogadó közösség kialakítása, 
 - A projekt fenntartóinak jogukban áll eltávolítani vagy megszólítani azokat a tartalmakat és közreműködőket, amelyek nem felelnek meg ezeknek a szabványoknak.
 - Ha a közösség tagjai nem tartják be ezeket az irányelveket, átmeneti vagy végleges kizárásra kerülhetnek a projektből.
 
+## Kapcsolat
+
+Ha jelen magatartási kódextel ellentétes magatartást tapasztalsz, vagy ennek tanúja vagy, fordulj a vasadam@yahoo.com-hoz. 
+Minden bejelentést bizalmasan kezelünk.
+
+Nagyra értékeljük elkötelezettségedet a mindenki számára pozitív és tiszteletteljes közösség fenntartása iránt.
