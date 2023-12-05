@@ -16,3 +16,9 @@ Projektünk célja egy tiszteletteljes és befogadó közösség kialakítása, 
 - A megfélemlítés, a trollkodás vagy a tiszteletlen viselkedés minden formája elfogadhatatlan.
 - Nem megengedettek olyan cselekvések vagy nyelvezet, amelyek kényelmetlen vagy ellenséges környezetet teremtenek.
 
+## Szabály akalmazása
+
+- A magatartási kódexet sértő minden bejelentett magatartást haladéktalanul felülvizsgálunk.
+- A projekt fenntartóinak jogukban áll eltávolítani vagy megszólítani azokat a tartalmakat és közreműködőket, amelyek nem felelnek meg ezeknek a szabványoknak.
+- Ha a közösség tagjai nem tartják be ezeket az irányelveket, átmeneti vagy végleges kizárásra kerülhetnek a projektből.
+
