@@ -4,4 +4,7 @@
 
 Komolyan vesszük a biztonságot. Ha biztonsági rést fedezel fel a projektben, kérjük, a lehető leghamarabb jelentsd azt nekünk.
 
+### Jelentési folyamat
+
+1. **Privát felkeresés**: Küldj egy e-mailt a vasadam@yahoo.com címre a biztonsági rés részletezésével. Kérlek, tartózkodj a nyilvánosságra hozataltól, amíg nincs lehetőségünk foglalkozni vele.
 
