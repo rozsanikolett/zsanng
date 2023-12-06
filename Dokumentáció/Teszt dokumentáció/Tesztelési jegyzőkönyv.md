@@ -26,4 +26,6 @@
 |2.3  | Foglalások menüpont megjelenik? ||
 |2.4  | Kijelentkezés gombra kattintva visszakerülünk a bejelentkező felületre ||
 |2.5  | Asztalokra kattintva megjelenik a tételek hozzárendelése opció ||
-|2.6  | Tételek hozzárendelése, hozzáad gomb működik ||
+|2.6  | Tételek hozzárendelése, hozzáad gomb működik? ||
+|2.7  | Fizetve gomb működik? ||
+|2.8  | Asztalokra kattintva a "vissza" gomb működik? ||
