@@ -10,21 +10,26 @@ namespace ettermi_rendeles
 {
     class adatbazis
     {
-		//az alábbi kapcsolatot definiáló string
-		string kapcs_string = "datasource=http://185.51.188.57/phpMyAdm;database=nohawebc_zsanng_db;username=nohawebc_zsanng;password=ZsAnNg2023!;charset=utf8";
+		string kapcs_string = "datasource=http://185.51.188.57/phpMyAdm" +
+            "database=nohawebc_zsanng_db" +
+            "username=nohawebc_zsanng" +
+            "password=ZsAnNg2023!" +
+            "charset=utf8";
 		// DB kapcsolat változója:
 		public MySqlConnection kapcs_mysql;
         //adapter, a dataset feltöltéséhez, ezzel fogjuk a datagridview forrását átadni
         MySqlDataAdapter adapter_mysql = new MySqlDataAdapter();
 		MySqlCommand cmd = new MySqlCommand();
 
-		public bool megnyitas() //ha megtudom nyitni true, ha nem false, mielőtt bármit operálok, MEG KELL NYITNI a Mysql kapcsolatot
+		public bool megnyitas()
         {
             try
             {
+
                 kapcs_mysql = new MySqlConnection(kapcs_string);
                 kapcs_mysql.Open();
                 return true;
+
             }
             catch 
             {
@@ -32,6 +37,7 @@ namespace ettermi_rendeles
                 return false; // nem sikerül az adatbázis bezárása
             }
         }
+
 
         public string[] rekord(string LKS)
         {
@@ -75,14 +81,15 @@ namespace ettermi_rendeles
             }
         }
 
-        public string szamot_ad(string LKS) //"a" kérdés válaszánál fogjuk hazsnálni
+        public string szamot_ad(string LKS)
         {
-            bezaras(); // ha nyitva marad a DB kapcsolat, akkor ebaszos lesz az újra megnyitása
-            if (megnyitas()) //ha meg tudjuk nyitni, akkor..
+            bezaras();
+            if (megnyitas())
             {
                 //létrehozok egy parancsváltozót, aminek a paramétere a lekérdezés(stringje) és a mysql kapcsolatot reprezentáló változó
                 MySqlCommand lekerdezes = new MySqlCommand(LKS, kapcs_mysql);
-                /*futtatjuk a "lekerdezes" parancsfájlban rögzített sql parancsot, az ExecuteScalar-t azért akalmazzuk mert ennek a 
+                
+               /*futtatjuk a "lekerdezes" parancsfájlban rögzített sql parancsot, az ExecuteScalar-t azért akalmazzuk mert ennek a 
                  lekérdezésnek EGY SZÁM az eredménye*/              
                  
                 return lekerdezes.ExecuteScalar().ToString();
