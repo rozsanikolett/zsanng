@@ -14,3 +14,4 @@ Komolyan vesszük a biztonságot. Ha biztonsági rést fedezel fel a projektben,
 
 4. **Közzétételi szabályzat**: Koordináljuk a sérülékenység nyilvánosságra hozatalát és javítását. Előre is köszönjük türelmed és megértésed a folyamat során.
 
+**Megjegyzés**: A biztonsági problémák bejelentésével beleegyezel abba, hogy kapcsolatba lépjünk veled a jelentett sebezhetőség tisztázása érdekében. 
