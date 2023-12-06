@@ -13,8 +13,14 @@
 |Lépés|Feladat|Teszt |
 |-----|-------|------|
 |1.1  | Backend felülettel létrejön a kapcsolat? |success|
-|1.1  | Backend felülettel folyamatos a kommunikáció? |success|
+|1.2  | Backend felülettel folyamatos a kommunikáció? |success|
 |1.3  | Backend felület adatbázisából az adtok lekérésének tesztje  |success|
-|1.3  | Backend felület adatbázisából az adtok megfelelő formátumának ellenőrzése  |success|
+|1.4  | Backend felület adatbázisából az adtok megfelelő formátumának ellenőrzése  |success|
 
+## 2. Fronted
 
+|Lépés|Feladat|Teszt |
+|-----|-------|------|
+|2.1  | Bejelentkező felület megjelenik? ||
+|2.2  | Bejelntkezést követően megjelenik az asztalok menüpont? ||
+|2.3  | Foglalások menüpont megjelenik? ||
