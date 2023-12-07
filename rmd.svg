@@ -59,8 +59,7 @@
       </style>
 
       <div class="container">
-        <h1>Welcome to Zs.A.A.N.N.G.!</h1><br>
-        <div class="hi">👋</div>
+        <h1>Welcome to Zs.A.A.N.N.G.! <div class="hi">👋</div></h1>        
       </div>
     </div>
   </foreignObject>
