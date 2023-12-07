@@ -25,7 +25,7 @@
           }
         }
 
-        .container {
+        .header {
           text-transform: uppercase;
           background-image: linear-gradient(
             -225deg,
@@ -46,7 +46,7 @@
           display: flex;
           justify-content: center;
           font-family: "Lucida Handwriting",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-          font-size: 2rem;
+          font-size:1rem;
       }
       p{
         margin: 0;
@@ -60,7 +60,7 @@
       }
 
         
-        .header {
+        .container {
           color: brown;
           font-family: Garamond, serif;
         	width: 95%;
@@ -70,7 +70,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: 1.5rem;
+          font-size: 1rem;
           
         }
         .hi {
@@ -90,10 +90,10 @@
         }
       </style>
 
-      <div class="container">
+      <div class="header">
         <h1>e-Pincér</h1>
       </div>
-      <div class="header">
+      <div class="container">
         <p> Az e-Pincér egy éttermek számára készült szoftver, amely a felszolgálók munkáját 
             könnyíti meg. Segítségével könnyedén kezelhetők az egyes asztalok rendelései és a 
             foglalások egyaránt. A program a jelenlegi állapotában <s>is teljes mértékben</s> korlátozottan használható, de a 
