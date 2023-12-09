@@ -43,3 +43,9 @@
         * betűtípus, betűméret beállítás
         * beírt betűk elrejtése * karakterré
         * TextBox méret beálltás  
+1.  Button létrehozás
+    - Bejelentkezés Button
+        * helyet kap a winformon belkül
+        * betűtípus, betűméret beállítás
+        * Button méret beállítás
+        * Bejelentkezés szöveg hozzáadás
