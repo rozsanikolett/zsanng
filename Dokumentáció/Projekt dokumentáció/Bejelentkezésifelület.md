@@ -35,6 +35,8 @@
         * színezés
 1. TextBox létrehozások
     - Felhasználónév TextBox
-        * 
+        * helyet kap a winformon
+        * betűtípus, betűméret beállítás
+        * TextBox méret beálltás
     - Jelszó TextBox 
         *   
