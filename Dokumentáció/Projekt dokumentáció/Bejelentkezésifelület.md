@@ -11,3 +11,7 @@
 |TextBox|tb_jelszo|TextBox a Jelszóhoz.|
 |Button|btn_bej|Button a Bejelentkezéshez.|
 
+## Program:
+
+1.  A programban egy windowsform objectet hozunk létre Bejelentkezés névvel.
+1. 
