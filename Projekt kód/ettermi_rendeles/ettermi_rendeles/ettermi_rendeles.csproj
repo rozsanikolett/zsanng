@@ -63,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adatbazis.cs" />
+    <Compile Include="bejelentkezesUnitTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="foglalasok.cs">
       <SubType>Form</SubType>
     </Compile>
