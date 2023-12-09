@@ -19,7 +19,10 @@
     - Bejlentkezés nevet adunk a window-nak
 1.  Label létrehozások
     - Bejelentkezés Label
-        * 
+        * helyet kap a winformon belül
+        * betűtípus, betűméret beállítás
+        * Bejelentkezés szöveg
+        * színezés
     - Felhasználóvél Label
         * 
     - Jelszó Label
