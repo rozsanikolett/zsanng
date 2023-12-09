@@ -29,4 +29,7 @@
         * Felhasználónév szöveg
         * színezés 
     - Jelszó Label
-        * 
+        * helyet kap a winformon belül
+        * betűtípus, betűméret beállítás
+        * Jelszó szöveg
+        * színezés
