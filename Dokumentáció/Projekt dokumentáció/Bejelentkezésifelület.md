@@ -24,6 +24,9 @@
         * Bejelentkezés szöveg
         * színezés
     - Felhasználóvél Label
-        * 
+        * helyet kap a winformon belül
+        * betűtípus, betűméret beállítás
+        * Felhasználónév szöveg
+        * színezés 
     - Jelszó Label
         * 
