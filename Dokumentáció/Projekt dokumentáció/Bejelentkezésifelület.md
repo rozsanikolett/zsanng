@@ -13,11 +13,11 @@
 
 ## Program:
 
-1.  A programban egy windowsform objectet hozunk létre.
+1. A programban egy windowsform objectet hozunk létre.
     - megadjuk a méretét
     - képernyő közepére igazítjuk
     - Bejlentkezés nevet adunk a window-nak
-1.  Label létrehozások
+1. Label létrehozások
     - Bejelentkezés Label
         * helyet kap a winformon belül
         * betűtípus, betűméret beállítás
@@ -33,3 +33,8 @@
         * betűtípus, betűméret beállítás
         * Jelszó szöveg
         * színezés
+1. TextBox létrehozások
+    - Felhasználónév TextBox
+        * 
+    - Jelszó TextBox 
+        *   
