@@ -39,4 +39,7 @@
         * betűtípus, betűméret beállítás
         * TextBox méret beálltás
     - Jelszó TextBox 
-        *   
+        * helyet kap a winformon
+        * betűtípus, betűméret beállítás
+        * beírt betűk elrejtése * karakterré
+        * TextBox méret beálltás  
