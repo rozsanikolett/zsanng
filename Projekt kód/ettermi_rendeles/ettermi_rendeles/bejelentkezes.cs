@@ -22,6 +22,11 @@ namespace ettermi_rendeles
         TextBox tb_fh, tb_jelszo;
         Button btn_bej;
 
+        public TextBox Tb_fh
+        {
+            get { return tb_fh; }
+            set { tb_fh = value; }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
