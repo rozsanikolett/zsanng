@@ -17,4 +17,10 @@
     - megadjuk a méretét
     - képernyő közepére igazítjuk
     - Bejlentkezés nevet adunk a window-nak
-1. 
+1.  Label létrehozások
+    - Bejelentkezés Label
+        * 
+    - Felhasználóvél Label
+        * 
+    - Jelszó Label
+        * 
