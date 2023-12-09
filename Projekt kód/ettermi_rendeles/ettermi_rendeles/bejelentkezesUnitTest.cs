@@ -51,5 +51,15 @@ namespace ettermi_rendeles
             string aktualis = Bejelentkezes.Lb_felhnev.Text;
             Assert.AreEqual(elvart, aktualis);
         }
+
+        [Test]
+        public void jelszoLabelTeszt(Label Lb_jelszo)
+        {
+            string str = "Jelszó";
+            string elvart = "Jelszó";
+            Bejelentkezes.Lb_jelszo.Text = str;
+            string aktualis = Bejelentkezes.Lb_jelszo.Text;
+            Assert.AreEqual(elvart, aktualis);
+        }
     }
 }
