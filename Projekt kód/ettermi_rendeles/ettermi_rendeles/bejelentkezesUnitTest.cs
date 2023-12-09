@@ -42,5 +42,14 @@ namespace ettermi_rendeles
             Assert.AreEqual(elvart, aktualis);
         }
 
+        [Test]
+        public void felhLabelTeszt(Label Lb_felhnev)
+        {
+            string str = "Felhasználó";
+            string elvart = "Felhasználó";
+            Bejelentkezes.Lb_felhnev.Text = str;
+            string aktualis = Bejelentkezes.Lb_felhnev.Text;
+            Assert.AreEqual(elvart, aktualis);
+        }
     }
 }
