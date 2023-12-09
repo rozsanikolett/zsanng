@@ -9,3 +9,5 @@
 |Label|lb_jelszo|Label a Jelszó felirathoz.|
 |TextBox|tb_fh|TextBox a Felhasználónévhez.|
 |TextBox|tb_jelszo|TextBox a Jelszóhoz.|
+|Button|btn_bej|Button a Bejelentkezéshez.|
+
