@@ -13,5 +13,8 @@
 
 ## Program:
 
-1.  A programban egy windowsform objectet hozunk létre Bejelentkezés névvel.
+1.  A programban egy windowsform objectet hozunk létre.
+    - megadjuk a méretét
+    - képernyő közepére igazítjuk
+    - Bejlentkezés nevet adunk a window-nak
 1. 
