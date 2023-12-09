@@ -49,3 +49,10 @@
         * betűtípus, betűméret beállítás
         * Button méret beállítás
         * Bejelentkezés szöveg hozzáadás
+1.  Button click object létrehozás
+    - adatbázis deklarálás
+    - vizsgálat
+        * megvizsgálja hogy a beírt felhasználónév és jelszó helyes-e
+        * ha helyes Sikeres bejelenkezés MessageBox jelenik meg és továbbít a kövekező részre
+        * helytelen felhasználónév/jelszó esetén kiírja
+        * ha üres valamelyik mező kiírja
