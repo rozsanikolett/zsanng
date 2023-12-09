@@ -22,5 +22,15 @@ namespace ettermi_rendeles
             Assert.AreEqual(elvart, aktualis);
         }
 
+        [Test]
+        public void jelszoteszt(TextBox Tb_jelszo)
+        {
+            string str = "12345";
+            string elvart = "12345";
+            Bejelentkezes.Tb_jelszo.Text = str;
+            string aktualis = Bejelentkezes.Tb_jelszo.Text;
+            Assert.AreEqual(elvart, Bejelentkezes.Tb_jelszo.Text);
+        }
+
     }
 }
