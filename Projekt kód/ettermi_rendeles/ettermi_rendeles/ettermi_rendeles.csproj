@@ -51,15 +51,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adatbazis.cs" />
-    <Compile Include="foglalasok.cs" />
-    <Compile Include="foglalasok.Designer.cs">
-      <DependentUpon>foglalasok.cs</DependentUpon>
-    </Compile>
     <Compile Include="bejelentkezes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="bejelentkezes.Designer.cs">
       <DependentUpon>bejelentkezes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="foglalasok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="foglalasok.Designer.cs">
+      <DependentUpon>foglalasok.cs</DependentUpon>
     </Compile>
     <Compile Include="pincer_fooldal.cs">
       <SubType>Form</SubType>
@@ -69,11 +71,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="foglalasok.resx">
-      <DependentUpon>foglalasok.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="bejelentkezes.resx">
       <DependentUpon>bejelentkezes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="foglalasok.resx">
+      <DependentUpon>foglalasok.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pincer_fooldal.resx">
       <DependentUpon>pincer_fooldal.cs</DependentUpon>
