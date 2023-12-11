@@ -64,14 +64,33 @@
           color: brown;
           font-family: Garamond, serif;
         	width: 95%;
-  			  border: 5px dotted brown;
+  			  border: 3px outset brown;
   			  padding: 10px;
   			  margin: 0;
           display: flex;
           justify-content: center;
           align-items: center;
           font-size: 1rem;
-          
+        }
+          .install {
+          color: brown;
+          font-family: Garamond, serif;
+        	width: 95%;
+  			  border: 3px inset brown;
+          border-collapse: collapse;
+  			  padding: 10px;
+  			  margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1rem;          
+        }
+        .install td:nth-child(1){
+          border-right: 2px solid brown;
+          padding-right: 10px;
+        }
+        .install td:nth-child(2){
+          padding-left: 10px;
         }
         .hi {
           animation: hi 3.5s linear 0.5s infinite;
@@ -101,6 +120,28 @@
             különböztet meg felhasználói jogosultságokat, így bármely alkalmazott teljes hozzáférést 
             kap az összes funkcióhoz, amennyiben rendelkezik bejelentkezési adatokkal.
         </p>          
+      </div><br/>
+      <div class="install">
+        <table>
+          <tbody>
+            <td>
+              <h3>Telepítés</h3>
+            </td>
+            <td>
+              <p> A szoftvernek szüksége van egy adatbázis szerverre, én erre a célra a fejlesztés során 
+                  is használt Wampserver-t javaslom. Miután a Wampservert feltelepítettük, indítsuk is el.
+                  Amint elindult, nyissuk meg a böngészőnket, és a ’localhost’ címet beírva (ha nem lett más 
+                  megadva) a Wampserver oldala fogad bennünket. Itt nyissuk meg a phpMyAdmint. A ’root’ 
+                  felhasználó beírásával és a jelszó mező üresen hagyásával beléphetünk az adatbázisok 
+                  kezelőfelületére. Fölül találhatunk egy „Importálás” gombot, erre kattintva tallózással 
+                  keressük meg az ’etterem_rn.sql’ fájlt a gépünkön. Miután beimportálta a rendszer a fájlt, 
+                  oldalt már láthatjuk is az adatbázist. Ezután indítsuk el az e-pincer.exe fájlt, amely megnyit 
+                  egy telepítővarázslót. A lépéseket követve a program feltelepíti a szükséges fájlokat. A 
+                  telepítő végeztével nyissuk meg az asztalon az e-Pincér alkalmazást.
+              </p>
+            </td>
+          </tbody>        
+        </table>    
       </div><br/>
     </div>
   </foreignObject>
