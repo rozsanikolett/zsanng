@@ -1,4 +1,4 @@
-<svg fill="none" viewBox="0 0 600 300" width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" viewBox="0 0 600 1200" width="600" height="1200" xmlns="http://www.w3.org/2000/svg">
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
@@ -25,26 +25,90 @@
           }
         }
 
+        .header {
+          text-transform: uppercase;
+          background-image: linear-gradient(
+            -225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%
+            );
+          background-size: auto auto;
+          background-clip: border-box;
+          background-size: 200% auto;
+          color: #fff;
+          background-clip: text;
+          text-fill-color: transparent;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: textclip 2s linear infinite;
+          display: flex;
+          justify-content: center;
+          font-family: "Lucida Handwriting",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          font-size:1rem;
+      }
+      p{
+        margin: 0;
+        padding: 0;
+      }
+
+      @keyframes textclip {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+        
         .container {
-          background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-          background-size: 400% 400%;
-          animation: gradient 5s ease infinite;
-
-          width: 100%;
-          height: 300px;
-
+          color: brown;
+          font-family: Garamond, serif;
+        	width: 95%;
+  			  border: 3px outset brown;
+  			  padding: 10px;
+  			  margin: 0;
           display: flex;
           justify-content: center;
           align-items: center;
-          color: white;
-
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          font-size: 1rem;
         }
-
+          .install {
+          color: brown;
+          font-family: Garamond, serif;
+        	width: 95%;
+  			  border: 3px inset brown;
+          border-collapse: collapse;
+  			  padding: 10px;
+  			  margin: 0;
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          font-size: 1rem;          
+        }
+        .install td:nth-child(1){
+          border-right: 2px solid brown;
+          padding-right: 10px;
+        }
+        .install td:nth-child(2){
+          padding-left: 10px;
+        }
+        .ul{
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+        .install .ul td{
+          border: none;
+        }
+        .install .ul li{
+          justify-content: space-between;
+          display: flex;
+          width: 17rem;
+        }               
         .hi {
-          animation: hi 1.5s linear -0.5s infinite;
+          animation: hi 3.5s linear 0.5s infinite;
           display: inline-block;
-          transform-origin: 70% 70%;
+          transform-origin: 50% 50%;
         }
 
         @media (prefers-reduced-motion) {
@@ -58,9 +122,78 @@
         }
       </style>
 
-      <div class="container">
-        <h1>Welcome to Zs.A.A.N.N.G.! <div class="hi">👋</div></h1>        
+      <div class="header">
+        <h1>e-Pincér</h1>
       </div>
+      <div class="container">
+        <p> Az e-Pincér egy éttermek számára készült szoftver, amely a felszolgálók munkáját 
+            könnyíti meg. Segítségével könnyedén kezelhetők az egyes asztalok rendelései és a 
+            foglalások egyaránt. A program a jelenlegi állapotában <s>is teljes mértékben</s> korlátozottan használható, de a 
+            későbbiekben amennyiben szükséges, bővíthető további funkciókkal is. A szoftver nem 
+            különböztet meg felhasználói jogosultságokat, így bármely alkalmazott teljes hozzáférést 
+            kap az összes funkcióhoz, amennyiben rendelkezik bejelentkezési adatokkal.
+        </p>          
+      </div><br/>
+      <div class="install">
+        <table>
+          <tbody>
+            <td>
+              <h3>Telepítés</h3>
+            </td>
+            <td>
+              <p> A szoftvernek szüksége van egy adatbázis szerverre, én erre a célra a fejlesztés során 
+                  is használt Wampserver-t javaslom. Miután a Wampservert feltelepítettük, indítsuk is el.
+                  Amint elindult, nyissuk meg a böngészőnket, és a ’localhost’ címet beírva (ha nem lett más 
+                  megadva) a Wampserver oldala fogad bennünket. Itt nyissuk meg a phpMyAdmint. A ’root’ 
+                  felhasználó beírásával és a jelszó mező üresen hagyásával beléphetünk az adatbázisok 
+                  kezelőfelületére. Fölül találhatunk egy „Importálás” gombot, erre kattintva tallózással 
+                  keressük meg az ’etterem_rn.sql’ fájlt a gépünkön. Miután beimportálta a rendszer a fájlt, 
+                  oldalt már láthatjuk is az adatbázist. Ezután indítsuk el az e-pincer.exe fájlt, amely megnyit 
+                  egy telepítővarázslót. A lépéseket követve a program feltelepíti a szükséges fájlokat. A 
+                  telepítő végeztével nyissuk meg az asztalon az e-Pincér alkalmazást.
+              </p>
+            </td>
+          </tbody>        
+        </table>    
+      </div><br/>
+      <div class="install">
+        <table>
+          <tbody>
+            <td>
+              <h3>Rendszerkövetelmények</h3>
+              <h5>(ajánlott)</h5>
+            </td>
+            <td>
+              <ul class="ul">
+                <li>
+                  <td>
+                    <strong>RAM:</strong>
+                  </td>
+                  <td>
+                    <strong>1 GB</strong>
+                  </td>
+                </li>
+                <li>
+                  <td>
+                    <strong>Felbontás:</strong>
+                  </td>
+                  <td>
+                    <strong>1280*800px</strong>
+                  </td>
+                </li>
+                <li>
+                  <td>
+                    <strong>Op. rendszer:</strong>
+                  </td>
+                  <td>
+                    <strong>Windows 10</strong>
+                  </td>
+                </li>                                
+              </ul>
+            </td>
+          </tbody>        
+        </table>    
+      </div><br/>
     </div>
   </foreignObject>
 </svg>
